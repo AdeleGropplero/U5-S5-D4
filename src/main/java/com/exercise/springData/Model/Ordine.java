@@ -1,6 +1,8 @@
 package com.exercise.springData.Model;
 
 import com.exercise.springData.Enums.StatoOrdine;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -11,6 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
+@Entity
+@Table(name = "ordini")
 public class Ordine {
     private static int count = 1;
     private int numOrdine;

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
@@ -72,7 +73,38 @@ public class ConfigurationBean {
     public Pizza salamona(){
         return new Pizza("Salamona", List.of(pomodoro(), mozzarella(), salame()), 1160, 5.99);
     }
+//-------------------------------------------------------------------------------
+@Bean
+public List<Topping> toppings() {
+    List<Topping> toppingsList = new ArrayList<>();
+    toppingsList.add(mozzarella());
+    toppingsList.add(pomodoro());
+    toppingsList.add(prosciutto());
+    toppingsList.add(cipolle());
+    toppingsList.add(ananas());
+    toppingsList.add(salame());
+    return toppingsList;
+}
 
+    @Bean
+    public List<Drink> drinks() {
+        List<Drink> drinksList = new ArrayList<>();
+        drinksList.add(lemonade());
+        drinksList.add(water());
+        drinksList.add(wine());
+        return drinksList;
+    }
+
+    @Bean
+    public List<Pizza> pizzas() {
+        List<Pizza> pizzasList = new ArrayList<>();
+        pizzasList.add(margherita());
+        pizzasList.add(hawaiana());
+        pizzasList.add(salamona());
+        return pizzasList;
+    }
+
+    //-------------------------------------------------------------------------------
     @Bean
     public Menu menu(){
         return new Menu(

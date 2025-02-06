@@ -1,6 +1,8 @@
 package com.exercise.springData.Model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,6 +11,8 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity
+@Table(name = "menu")
 public class Menu {
     private List<Pizza> pizze;
     private List<Topping> toppings;

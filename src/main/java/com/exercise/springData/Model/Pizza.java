@@ -1,6 +1,10 @@
 package com.exercise.springData.Model;
 
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 import java.util.List;
@@ -8,7 +12,10 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity
+@DiscriminatorValue("PIZZA")
 public class Pizza extends Alimento{
+    @Id
     private String name;
     private List<Topping> toppings;
 
